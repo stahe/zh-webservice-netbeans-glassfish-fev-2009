@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://stahe.github.io/zh-webservice-netbeans-glassfish-fev-2009/sitemap.xml
