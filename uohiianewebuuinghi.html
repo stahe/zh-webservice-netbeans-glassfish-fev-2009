@@ -12,7 +12,7 @@
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/zh-webservice-netbeans-glassfish-fev-2009/uoaia-web-uueinghi.html">
+        <link rel="canonical" href="https://stahe.github.io/zh-webservice-netbeans-glassfish-fev-2009/uohiianewebuuinghi.html">
       
       
         <link rel="prev" href="ianie.html">
@@ -29,7 +29,7 @@
     
     
       
-        <title>2. 所开发 Web 服务的性质 - 使用 NetBeans 6.5 IDE 和 GlassFish Java EE 服务器创建 Java EE Web 服务</title>
+        <title>2. 所实现的Web服务性质 - 使用 NetBeans 6.5 IDE 和 GlassFish Java EE 服务器创建 Java EE Web 服务</title>
       
     
     
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -128,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2. 所开发 Web 服务的性质
+              2. 所实现的Web服务性质
             
           </span>
         </div>
@@ -339,14 +341,14 @@
         
       
       
-      <a href="uoaia-web-uueinghi.html" class="md-nav__link md-nav__link--active">
+      <a href="uohiianewebuuinghi.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. 所开发 Web 服务的性质
+    2. 所实现的Web服务性质
   
 
     
@@ -394,14 +396,14 @@
   
   
     <li class="md-nav__item">
-      <a href="onguuuee-j2ee-web-uu.html" class="md-nav__link">
+      <a href="j2ee-uue-web-uu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. 用于预约的 J2EE Web 服务
+    4. J2EE 预约 Web 服务
   
 
     
@@ -421,14 +423,14 @@
   
   
     <li class="md-nav__item">
-      <a href="j2ee-uueuue-net-euuan.html" class="md-nav__link">
+      <a href="ihengnaiuu-j2ee-e-net-euuan.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5. J2EE 预约服务的 .NET 客户端
+    5. 日程安排服务 J2EE 的 .NET 客户端
   
 
     
@@ -448,14 +450,14 @@
   
   
     <li class="md-nav__item">
-      <a href="jee-uueuue-flex-euuan.html" class="md-nav__link">
+      <a href="ihengnaiuu-jee-e-flex-euuan.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. JEE 预约服务的 Flex 客户端
+    6. 日程安排服务 JEE 的 Flex 客户端
   
 
     
@@ -512,24 +514,24 @@
 
 
 
-<h1 id="2-web">2. <span style="color: #365f91">所开发 Web 服务的性质</span></h1>
-<p>一家IT服务公司[ISTIA-IAIE]希望提供预约安排服务。主要目标市场是个体执业医生。这些医生通常没有行政人员。因此，希望预约的客户会直接致电医生。这经常打乱医生全天的工作安排，从而减少了他们为患者提供诊疗的时间。该公司[ISTIA-IAIE]希望为他们提供一项基于以下原则运行的预约安排服务：</p>
+<h1 id="2-web">2. <span style="color: #365f91">所实现的Web服务性质</span></h1>
+<p>某家IT服务公司[ISTIA-IAIE]希望推出一项预约服务。其首要目标市场是独立执业的医生。这类医生通常没有秘书。 因此，需要预约的客户会直接致电医生。这导致医生在一天中频繁被打扰，从而降低了其为患者提供诊疗的时间。[ISTIA-IAIE]公司希望为他们提供一项基于以下原则运行的预约服务：</p>
 <ul>
-<li>由一名接待员负责为多名医生处理预约安排。该接待员可以仅由一人担任。其薪资由所有使用该预约服务的医生共同分摊。</li>
-<li>行政办公室和所有医生均连接到互联网</li>
-<li>预约信息记录在集中式数据库中，行政办公室和医生均可通过互联网访问</li>
-<li>预约通常由行政办公室安排，医生也可自行安排。尤其当医生在诊疗结束时为患者安排下次预约时，通常由医生自行安排。</li>
+<li>由一个秘书处统一为众多医生处理预约事宜。该秘书处仅需一人即可运作，其薪资由所有使用该服务的医生共同分摊。</li>
+<li>秘书处及所有医生均接入互联网</li>
+<li>RV预约信息存储于中央数据库中，秘书处和医生均可通过互联网访问</li>
+<li>RV的录入通常由秘书处完成。医生本人也可进行录入。特别是在诊疗结束时，医生亲自为患者开具新的RV的情况下。</li>
 </ul>
-<p>预约安排服务的架构如下：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000696000001ED08A3ADA8.png" width="680" height="199" style="display:inline-block; margin:4px;width:17.997cm;height:5.262cm;" class="odt-zoomable" data-zoom-src="images/1000000000000696000001ED08A3ADA8.png" /></td></tr></table>
+<p>RV开立服务的架构如下：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000696000001ED08A3ADA8.png" width="680" height="199" style="display:inline-block; margin:4px;width:17.997cm;height:5.262cm;" class="odt-zoomable" data-zoom-src="images/1000000000000696000001ED08A3ADA8.png" /></td></tr></table>
 
-<p>如果医生不再需要管理预约，他们的工作效率就会提高。如果医生数量足够多，他们对行政办公室运营成本的贡献将微乎其微。</p>
-<p>[ISTIA-IAIE] 公司已决定将服务器端组件作为 Web 服务来实现。该应用程序将采用以下架构：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000880000001F9E0EAE346.png" width="680" height="158" style="display:inline-block; margin:4px;width:17.997cm;height:4.177cm;" class="odt-zoomable" data-zoom-src="images/1000000000000880000001F9E0EAE346.png" /></td></tr></table>
+<p>如果医生不再需要管理RV，工作效率将得到提升。如果参与的医生数量足够多，他们对秘书处运营费用的分摊将微乎其微。</p>
+<p>[ISTIA-IAIE]公司决定将服务器端以Web服务的形式实现。该应用程序将采用以下架构：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000880000001F9E0EAE346.png" width="680" height="158" style="display:inline-block; margin:4px;width:17.997cm;height:4.177cm;" class="odt-zoomable" data-zoom-src="images/1000000000000880000001F9E0EAE346.png" /></td></tr></table>
 
 <ul>
-<li>[1]：实现数据访问的 [DAO, JPA] 层采用 J2EE Web 服务实现</li>
-<li></li>
+<li>[1]：用于访问数据的[dao, jpa]层是通过J2EE Web服务实现的</li>
+<li>[2]：我们将介绍多种类型的客户端：Java、C#、Asp.Net</li>
 </ul>
 
 

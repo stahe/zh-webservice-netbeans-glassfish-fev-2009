@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://stahe.github.io/zh-webservice-netbeans-glassfish-fev-2009/ingonghengueonguouani.html">
       
       
-        <link rel="prev" href="uoaia-web-uueinghi.html">
+        <link rel="prev" href="uohiianewebuuinghi.html">
       
       
-        <link rel="next" href="onguuuee-j2ee-web-uu.html">
+        <link rel="next" href="j2ee-uue-web-uu.html">
       
       
         
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -330,14 +332,14 @@
   
   
     <li class="md-nav__item">
-      <a href="uoaia-web-uueinghi.html" class="md-nav__link">
+      <a href="uohiianewebuuinghi.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. 所开发 Web 服务的性质
+    2. 所实现的Web服务性质
   
 
     
@@ -394,14 +396,14 @@
   
   
     <li class="md-nav__item">
-      <a href="onguuuee-j2ee-web-uu.html" class="md-nav__link">
+      <a href="j2ee-uue-web-uu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. 用于预约的 J2EE Web 服务
+    4. J2EE 预约 Web 服务
   
 
     
@@ -421,14 +423,14 @@
   
   
     <li class="md-nav__item">
-      <a href="j2ee-uueuue-net-euuan.html" class="md-nav__link">
+      <a href="ihengnaiuu-j2ee-e-net-euuan.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5. J2EE 预约服务的 .NET 客户端
+    5. 日程安排服务 J2EE 的 .NET 客户端
   
 
     
@@ -448,14 +450,14 @@
   
   
     <li class="md-nav__item">
-      <a href="jee-uueuue-flex-euuan.html" class="md-nav__link">
+      <a href="ihengnaiuu-jee-e-flex-euuan.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. JEE 预约服务的 Flex 客户端
+    6. 日程安排服务 JEE 的 Flex 客户端
   
 
     
@@ -512,24 +514,24 @@
 
 
 
-<p><a id="vuesappliweb"></a></p>
+<p><span id="vuesappliweb" name="vuesappliweb" class="odt-bookmark-anchor"></span></p>
 <h1 id="3">3. <span style="color: #365f91">应用程序的工作原理</span></h1>
-<p>我们将该应用程序命名为 [RdvMedecins]。以下是使用 Web 客户端时其操作界面的截图。本教程不涉及该 Web 客户端，相关内容可在文档 [http://tahe.developpez.com/dotnet/exercices/] 的练习 #4 中找到。</p>
-<p>该应用程序的首页如下所示：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001FD000000CACEA1FF79.png" width="358" height="142" style="display:inline-block; margin:4px;width:9.46cm;height:3.754cm;" class="odt-zoomable" data-zoom-src="images/10000000000001FD000000CACEA1FF79.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>我们将该应用程序命名为 [RdvMedecins]。下面展示的是该应用程序与 Web 客户端配合使用时的运行截图。本教程中未介绍该 Web 客户端，相关内容请参见文档 [http://tahe.developpez.com/dotnet/exercices/] 的第 4 号练习。</p>
+<p>应用程序的首页如下所示：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001FD000000CACEA1FF79.png" width="358" height="141" style="display:inline-block; margin:4px;width:9.46cm;height:3.739cm;" class="odt-zoomable" data-zoom-src="images/10000000000001FD000000CACEA1FF79.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>用户（前台接待员、医生）将在此首页执行多项操作。我们将在下文中进行说明。左侧视图展示了用户<strong>发起请求</strong>时的界面；右侧视图展示了服务器返回的<strong>响应</strong>。</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000085C000004954AEF4D06.png" width="680" height="373" style="display:inline-block; margin:4px;width:17.997cm;height:9.865cm;" class="odt-zoomable" data-zoom-src="images/100000000000085C000004954AEF4D06.png" /></td></tr></table>
+<p>从该首页开始，用户（秘书处、医生）将执行一系列操作。我们将在下文中进行说明。左侧视图展示了用户发起<strong>请求</strong>时的界面，右侧视图则展示了服务器返回的<strong>响应</strong>。</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000085C000004954AEF4D06.png" width="680" height="373" style="display:inline-block; margin:4px;width:17.997cm;height:9.864cm;" class="odt-zoomable" data-zoom-src="images/100000000000085C000004954AEF4D06.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000085200000265CA2B493B.png" width="680" height="196" style="display:inline-block; margin:4px;width:17.997cm;height:5.179cm;" class="odt-zoomable" data-zoom-src="images/100000000000085200000265CA2B493B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000085200000265CA2B493B.png" width="680" height="196" style="display:inline-block; margin:4px;width:17.997cm;height:5.179cm;" class="odt-zoomable" data-zoom-src="images/100000000000085200000265CA2B493B.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000028900000180E18D1C0B.png" width="325" height="192" style="display:inline-block; margin:4px;width:8.587cm;height:5.082cm;" class="odt-zoomable" data-zoom-src="images/100000000000028900000180E18D1C0B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000028900000180E18D1C0B.png" width="325" height="192" style="display:inline-block; margin:4px;width:8.587cm;height:5.08cm;" class="odt-zoomable" data-zoom-src="images/100000000000028900000180E18D1C0B.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000008510000029A747BE971.png" width="680" height="213" style="display:inline-block; margin:4px;width:17.997cm;height:5.63cm;" class="odt-zoomable" data-zoom-src="images/10000000000008510000029A747BE971.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000008510000029A747BE971.png" width="680" height="213" style="display:inline-block; margin:4px;width:17.997cm;height:5.629cm;" class="odt-zoomable" data-zoom-src="images/10000000000008510000029A747BE971.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000858000002E77CA81E98.png" width="680" height="237" style="display:inline-block; margin:4px;width:17.997cm;height:6.26cm;" class="odt-zoomable" data-zoom-src="images/1000000000000858000002E77CA81E98.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000858000002E77CA81E98.png" width="680" height="237" style="display:inline-block; margin:4px;width:17.997cm;height:6.26cm;" class="odt-zoomable" data-zoom-src="images/1000000000000858000002E77CA81E98.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000085C0000029BED9840AC.png" width="680" height="212" style="display:inline-block; margin:4px;width:17.997cm;height:5.609cm;" class="odt-zoomable" data-zoom-src="images/100000000000085C0000029BED9840AC.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000085C0000029BED9840AC.png" width="680" height="212" style="display:inline-block; margin:4px;width:17.997cm;height:5.609cm;" class="odt-zoomable" data-zoom-src="images/100000000000085C0000029BED9840AC.png" /></td></tr></table>
 
 
 

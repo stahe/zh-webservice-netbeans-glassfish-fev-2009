@@ -12,10 +12,10 @@
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/zh-webservice-netbeans-glassfish-fev-2009/jee-uueuue-flex-euuan.html">
+        <link rel="canonical" href="https://stahe.github.io/zh-webservice-netbeans-glassfish-fev-2009/ihengnaiuu-jee-e-flex-euuan.html">
       
       
-        <link rel="prev" href="j2ee-uueuue-net-euuan.html">
+        <link rel="prev" href="ihengnaiuu-j2ee-e-net-euuan.html">
       
       
         <link rel="next" href="ieun.html">
@@ -29,7 +29,7 @@
     
     
       
-        <title>6. JEE 预约服务的 Flex 客户端 - 使用 NetBeans 6.5 IDE 和 GlassFish Java EE 服务器创建 Java EE Web 服务</title>
+        <title>6. 日程安排服务 JEE 的 Flex 客户端 - 使用 NetBeans 6.5 IDE 和 GlassFish Java EE 服务器创建 Java EE Web 服务</title>
       
     
     
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -128,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              6. JEE 预约服务的 Flex 客户端
+              6. 日程安排服务 JEE 的 Flex 客户端
             
           </span>
         </div>
@@ -330,14 +332,14 @@
   
   
     <li class="md-nav__item">
-      <a href="uoaia-web-uueinghi.html" class="md-nav__link">
+      <a href="uohiianewebuuinghi.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. 所开发 Web 服务的性质
+    2. 所实现的Web服务性质
   
 
     
@@ -384,14 +386,14 @@
   
   
     <li class="md-nav__item">
-      <a href="onguuuee-j2ee-web-uu.html" class="md-nav__link">
+      <a href="j2ee-uue-web-uu.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. 用于预约的 J2EE Web 服务
+    4. J2EE 预约 Web 服务
   
 
     
@@ -411,14 +413,14 @@
   
   
     <li class="md-nav__item">
-      <a href="j2ee-uueuue-net-euuan.html" class="md-nav__link">
+      <a href="ihengnaiuu-j2ee-e-net-euuan.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5. J2EE 预约服务的 .NET 客户端
+    5. 日程安排服务 J2EE 的 .NET 客户端
   
 
     
@@ -454,7 +456,7 @@
   <span class="md-ellipsis">
     
   
-    6. JEE 预约服务的 Flex 客户端
+    6. 日程安排服务 JEE 的 Flex 客户端
   
 
     
@@ -465,14 +467,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="jee-uueuue-flex-euuan.html" class="md-nav__link md-nav__link--active">
+      <a href="ihengnaiuu-jee-e-flex-euuan.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. JEE 预约服务的 Flex 客户端
+    6. 日程安排服务 JEE 的 Flex 客户端
   
 
     
@@ -501,7 +503,7 @@
   <a href="#61-flex" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.1. 首个 Flex 客户端
+        6.1. 第一个 Flex 客户端
       
     </span>
   </a>
@@ -571,117 +573,117 @@
 
 
 
-<h1 id="6-jee-flex">6. <span style="color: #365f91">JEE 预约服务的 Flex 客户端</span></h1>
-<p>现在，我们将介绍两个用于 JEE 预约 Web 服务的 <strong>Flex</strong> 客户端。所使用的 IDE 是 Flex Builder 3。该产品的演示版可从以下网址下载：[https://www.adobe.com/cfusion/tdrc/index.cfm?loc=fr_fr&amp;product=flex]。 Flex Builder 3 是一款基于 Eclipse 的集成开发环境（IDE）。此外，为运行 Flex 客户端，我们使用了 <strong>Wamp</strong> 工具 [http://www.wampserver.com/] 提供的 Apache Web 服务器。任何 <strong>Apache</strong> 服务器均可满足需求。显示 Flex 客户端的浏览器必须安装 <strong>Flash Player</strong> 9 或更高版本。</p>
-<p>Flex 应用程序的独特之处在于它们在浏览器的 Flash Player 插件中运行。从这一角度来看，它们与 Ajax 应用程序相似，后者将 JavaScript 脚本嵌入发送到浏览器的页面中，然后在浏览器内执行。 Flex 应用程序并非通常意义上的 Web 应用程序：它是 Web 服务器所提供服务的客户端应用程序。从这一点来看，它类似于作为这些相同服务客户端的桌面应用程序。但有一点不同：它最初是从 Web 服务器下载到配备了能够运行它的 Flash Player 插件的浏览器中的。 </p>
-<p>与桌面应用程序类似，Flex 应用程序主要由两个要素组成：</p>
+<h1 id="6-jee-flex">6. <span style="color: #365f91">日程安排服务 JEE 的 Flex 客户端</span></h1>
+<p>现在我们介绍两个基于 JEE 预约 Web 服务的 <strong>Flex</strong> 客户端。所使用的 IDE 是 Flex Builder 3。该产品的演示版可从 [https://www.adobe.com/cfusion/tdrc/index.cfm?loc=fr_fr&amp;product=flex] 网址下载。 Flex Builder 3是基于Eclipse的开发工具。此外，为了运行Flex客户端，我们使用了Wamp工具中的Apache Web服务器。任何<strong>Apache服务器</strong>均可满足需求。显示Flex客户端的浏览器必须安装至少<strong>Flash Player</strong> 9版本的插件。</p>
+<p>Flex 应用程序的特点是在浏览器的 Flash Player 插件中运行。在这方面，它们类似于 Ajax 应用程序——后者将脚本嵌入发送到浏览器的页面中，随后在浏览器内执行。 Flex 应用程序并非通常意义上的 Web 应用程序：它是一个由 Web 服务器提供服务的客户端应用程序。从这一点来看，它类似于作为这些服务客户端的桌面应用程序。但有一点不同：它最初是从 Web 服务器下载到安装了能够运行它的 Flash Player 插件的浏览器中的。 </p>
+<p>与桌面应用程序一样，Flex 应用程序主要由两个部分组成：</p>
 <ul>
-  <li><b>展示</b>层：即在浏览器中显示的视图。这些视图提供的丰富功能与桌面应用程序窗口相当。视图使用一种名为 <b>MXML</b> 的标记语言进行描述。
+  <li><b>呈现</b>部分：即在浏览器中显示的视图。这些视图具备桌面应用程序窗口的丰富功能。视图通过一种名为<b>MXML</b>的标记语言进行描述。
   </li>
-  <li><b>代码</b>组件：主要处理用户在视图上操作所触发的事件。该代码既可以用 <b>MXML</b> 编写，也可以使用一种名为 <b>ActionScript</b> 的面向对象语言编写。必须区分两种类型的事件：
+  <li><b>代码</b>部分：主要处理用户在视图上操作所触发的事件。该代码既可以使用 <b>MXML</b> 编写，也可以使用一种名为 <b>ActionScript</b> 的面向对象语言编写。需要区分两种类型的事件：
   </li>
-  <li>需要与 Web 服务器通信的事件：例如使用 Web 应用程序提供的数据填充列表、将表单数据提交至服务器等。Flex 提供了多种与服务器通信的方法，这些方法对开发者而言是透明的。这些方法默认是<b>异步的</b>：在服务器请求进行期间，用户可以继续与视图进行交互。
+  <li>需要与Web服务器进行交互的事件：例如使用Web应用程序提供的数据填充列表、将表单数据发送至服务器等。Flex提供了一系列方法，可在开发者无需干预的情况下与服务器进行通信。这些方法默认<b>是异步的</b>：在向服务器发送请求期间，用户仍可继续与视图进行交互。
   </li>
-  <li>无需与服务器交换数据即可修改显示视图的事件，例如将树中的项目拖拽并放入列表中。此类事件完全在浏览器本地处理。
+  <li>不与服务器交换数据而直接修改显示视图的事件，例如从树中拖拽一个元素并将其放入列表中。此类事件完全在浏览器本地处理。
   </li>
 </ul>
 
-<p>Flex 应用程序通常按以下方式执行：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000349000000FDC1BA74C5.png" width="421" height="127" style="display:inline-block; margin:4px;width:11.127cm;height:3.348cm;" class="odt-zoomable" data-zoom-src="images/1000000000000349000000FDC1BA74C5.png" /></td></tr></table>
+<p>Flex 应用程序通常按以下方式运行：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000349000000FDC1BA74C5.png" width="421" height="127" style="display:inline-block; margin:4px;width:11.127cm;height:3.348cm;" class="odt-zoomable" data-zoom-src="images/1000000000000349000000FDC1BA74C5.png" /></td></tr></table>
 
 <ul>
-  <li>在 [1] 中，会请求一个 HTML 页面
+  <li>在 [1] 中，请求一个 HTML 页面
   </li>
-  <li>在 [2] 处，该页面被发送出去。其中包含一个 <b>SWF</b>（ShockWave Flash）二进制文件，该文件包含整个 Flex 应用程序：所有视图及其事件处理代码。该文件将由浏览器的 Flash Player 插件执行。
+  <li>在 [2] 中，该页面被发送出去。它随附了一个二进制文件 <b>SWF</b>（<b>ShockWave </b>Flash），其中包含完整的 Flex 应用程序：所有视图及其事件处理代码。 该文件将由浏览器的 FlashPlayer 插件执行。
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000370000000F2DC4EA6C0.png" width="440" height="121" style="display:inline-block; margin:4px;width:11.642cm;height:3.201cm;" class="odt-zoomable" data-zoom-src="images/1000000000000370000000F2DC4EA6C0.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000370000000F2DC4EA6C0.png" width="440" height="121" style="display:inline-block; margin:4px;width:11.642cm;height:3.201cm;" class="odt-zoomable" data-zoom-src="images/1000000000000370000000F2DC4EA6C0.png" /></td></tr></table>
 
 <ul>
-  <li>Flex客户端通常在浏览器本地运行，除非需要外部数据。此时，它会向服务器发起请求[3]。随后在[4]处接收数据，数据格式可以是XML或二进制。被查询的Web服务器上的应用程序可以使用任何语言编写，关键在于响应格式。
+  <li>Flex客户端通常在浏览器本地运行，除非需要外部数据。此时，它会向[3]服务器请求数据，并以[4]格式接收数据，格式包括XML或二进制格式。 被调用的Web服务器端应用程序可以使用任何编程语言编写，关键在于响应的格式。
   </li>
 </ul>
 
-<p>我们已阐述了 Flex 应用程序的执行架构，以便读者能够清楚地理解它与不使用 Ajax 的传统 Web 应用程序（如前文所述的 Asp.Net 应用程序）之间的区别。在后者中，浏览器处于被动状态：它仅显示由 Web 服务器构建并发送至浏览器的 HTML 页面。</p>
-<p>在接下来的章节中，我们将提供两个 Flex 客户端的示例，其唯一目的是展示 Web 服务客户端的多样性。由于笔者本人也是 Flex 初学者，某些要点可能未能得到应有的详细解释。</p>
-<h2 id="61-flex">6.1. <span style="color: #4f81bd">首个 Flex 客户端</span></h2>
-<p>现在，我们将编写第一个 Flex 客户端来显示客户端列表。我们将实现的客户端/服务器架构如下：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005800000012353A40504.png" width="680" height="141" style="display:inline-block; margin:4px;width:17.997cm;height:3.72cm;" class="odt-zoomable" data-zoom-src="images/10000000000005800000012353A40504.png" /></td></tr></table>
+<p>我们描述了 Flex 应用程序的运行架构，以便读者清楚地理解它与不使用 Ajax 的传统 Web 应用程序（如前文所述的 Asp.Net 应用程序）之间的区别。在后者中，浏览器是被动的：它只是显示由 Web 服务器构建并发送给它的 HTML 页面。</p>
+<p>接下来，我们将提供两个 Flex 客户端的示例，仅为展示 Web 服务客户端的多样性。由于笔者本人也是 Flex 初学者，某些要点可能无法像应有的那样详细阐述。</p>
+<h2 id="61-flex">6.1. <span style="color: #4f81bd">第一个 Flex 客户端</span></h2>
+<p>现在，我们将编写第一个 Flex 客户端来显示客户列表。构建的客户端/服务器架构如下：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005800000012353A40504.png" width="680" height="141" style="display:inline-block; margin:4px;width:17.997cm;height:3.72cm;" class="odt-zoomable" data-zoom-src="images/10000000000005800000012353A40504.png" /></td></tr></table>
 
-<p>在此架构中，有两台 Web 服务器：</p>
+<p>在此架构中，包含两台Web服务器：</p>
 <ul>
-  <li>运行远程 Web 服务的 GlassFish 服务器
+  <li>运行远程Web服务的Glassfish服务器
   </li>
-  <li>运行远程 Web 服务 Flex 客户端的 Apache 服务器
+  <li>运行远程Web服务Flex客户端的Apache服务器
   </li>
 </ul>
 
-<p>我们正在使用 Flex Builder 3 集成开发环境 (IDE) 构建 Flex 客户端：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B400000126A37AAFC5.png" width="602" height="147" style="display:inline-block; margin:4px;width:15.928cm;height:3.889cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B400000126A37AAFC5.png" /></td></tr></table>
+<p>我们将使用 Flex Builder 3 构建 Flex 客户端：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004B400000126A37AAFC5.png" width="602" height="147" style="display:inline-block; margin:4px;width:15.928cm;height:3.889cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B400000126A37AAFC5.png" /></td></tr></table>
 
 <ul>
-  <li>在 Flex Builder 3 中，在 [1] 处创建一个新项目
+  <li>在 Flex Builder 3 中，创建一个新项目 [1]
   </li>
-  <li>在 [2] 中为其命名，并在 [3] 中指定生成项目的文件夹
+  <li>为其命名，并指定生成文件夹
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004CF000001232F8635B0.png" width="616" height="146" style="display:inline-block; margin:4px;width:16.286cm;height:3.851cm;" class="odt-zoomable" data-zoom-src="images/10000000000004CF000001232F8635B0.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004CF000001232F8635B0.png" width="616" height="146" style="display:inline-block; margin:4px;width:16.286cm;height:3.851cm;" class="odt-zoomable" data-zoom-src="images/10000000000004CF000001232F8635B0.png" /></td></tr></table>
 
 <ul>
-  <li>在 [4] 中，为主要应用程序（即将被执行的程序）命名
+  <li>在 [4] 中，为主要应用程序（即将被执行的应用程序）命名
   </li>
   <li>在 [5] 中，生成后的项目
   </li>
-  <li>在 [6] 中，应用程序的主 MXML 文件
+  <li>在 [6] 中，应用程序的主文件 MXML
   </li>
-  <li>MXML 文件包含一个视图及其对应的事件处理代码。[源代码] 选项卡 [7] 提供了对 MXML 文件的访问。在那里，您将看到描述视图的 &lt;mx&gt; 标签以及 ActionScript 代码。
+  <li>文件 MXML 包含一个视图及其事件处理代码。 [Source] [7] 选项卡可访问 MXML 文件。其中包含描述视图的 &lt;mx&gt; 标签以及 ActionScript 代码。
   </li>
-  <li>可以通过 [设计] 选项卡 [8] 以图形化方式构建视图。随后，描述该视图的 MXML 标签会自动生成在 [源代码] 选项卡中。反之亦然：直接在 [源代码] 选项卡中添加的 MXML 标签也会在 [设计] 选项卡中以图形形式显示。
+  <li>可通过 [Design] 和 [8] 选项卡以图形化方式构建视图。此时，描述该视图的 MXML 标签将自动生成在 [Source] 选项卡中。 反之亦然：直接在 [Source] 选项卡中添加的 MXML 标签，会在 [Design] 选项卡中以图形形式体现。
   </li>
 </ul>
 
-<p>与之前的 C# 和 ASP.NET 客户端一样，我们将为远程 Web 服务 S [A] 生成本地 C 代理 [B]：</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000056F00000129F3FF2416.png" width="680" height="145" style="display:inline-block; margin:4px;width:17.997cm;height:3.844cm;" class="odt-zoomable" data-zoom-src="images/100000000000056F00000129F3FF2416.png" /></td></tr></table>
+<p>与之前的 C# 客户端和 Asp.Net 一样，我们将为远程 Web 服务 S [A] 生成本地 C 代理 [B]：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000056F00000129F3FF2416.png" width="680" height="145" style="display:inline-block; margin:4px;width:17.997cm;height:3.842cm;" class="odt-zoomable" data-zoom-src="images/100000000000056F00000129F3FF2416.png" /></td></tr></table>
 
-<p>要生成 C 代理，JEE Web 服务必须处于活动状态。</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003CF000000C221312307.png" width="488" height="97" style="display:inline-block; margin:4px;width:12.899cm;height:2.566cm;" class="odt-zoomable" data-zoom-src="images/10000000000003CF000000C221312307.png" /></td></tr></table>
+<p>要生成 C 代理，Web 服务 JEE 必须处于活动状态。</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003CF000000C221312307.png" width="488" height="97" style="display:inline-block; margin:4px;width:12.899cm;height:2.566cm;" class="odt-zoomable" data-zoom-src="images/10000000000003CF000000C221312307.png" /></td></tr></table>
 
 <ul>
   <li>在 [1] 中，选择<i>“数据 / 导入 Web 服务</i>”选项
   </li>
-  <li>在 [2] 中，选择用于生成 C 代理类和接口的文件夹。
+  <li>在 [2] 中，选择 C 代理类和接口的生成文件夹。
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000511000002984672209D.png" width="649" height="332" style="display:inline-block; margin:4px;width:17.159cm;height:8.784cm;" class="odt-zoomable" data-zoom-src="images/1000000000000511000002984672209D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000511000002984672209D.png" width="649" height="332" style="display:inline-block; margin:4px;width:17.159cm;height:8.784cm;" class="odt-zoomable" data-zoom-src="images/1000000000000511000002984672209D.png" /></td></tr></table>
 
 <ul>
-  <li>在 [3] 中，输入远程 Web 服务 S 的 WSDL 文件的 URI（参见<a href="#uri-service-web"><u><span style="color: #0563c1">第 4.10.2</span></u></a> 节），然后继续下一步
+  <li>在 [3] 中，输入远程 Web 服务 S 的 WSDL 文件的 Uri（参见第<a href="j2ee-uue-web-uu.html#uri-service-web"><u><span style="color: #0563c1"> 4.10.2</span></u></a> 节），然后进入下一步
   </li>
-  <li>在 [4] 和 [5] 中，由 [3] 中指定的 WSDL 文件描述的 Web 服务
+  <li>在 [4] 和 [5] 中，将 [3] 中指定的 WSDL 文件所描述的 Web 服务
   </li>
-  <li>在 [6] 中：将为 C 代理生成的方法列表。请注意，这些并非服务 S 的实际方法，它们的签名并不正确。在此，无论实际 Web 服务方法包含多少个参数，列表中的每个方法都仅有一个参数。该单一参数是一个类实例，其字段中封装了远程方法所期望的参数。
+  <li>在 [6] 中：即将为代理 C 生成的方法列表。请注意，这些并非服务 S 的实际方法。它们的签名不正确。 在此，无论Web服务实际方法的参数数量如何，所展示的每个方法都仅有一个参数。该唯一参数是一个类实例，其字段中封装了远程方法所期望的参数。
   </li>
-  <li>在 [7] 中：将生成代理 C 的类和接口的包
+  <li>在 [7] 中：C 语言代理的类和接口将被生成在此包中
   </li>
   <li>在 [8] 中：将作为远程 Web 服务代理的本地类名称
   </li>
   <li>在 [9] 中：完成向导。
   </li>
-  <li>在 [10] 中：生成的 C 代理类和接口的列表。
+  <li>在 [10] 中：生成的 C 语言代理类和接口的列表。
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001B000000081A015FB8E.png" width="216" height="65" style="display:inline-block; margin:4px;width:5.715cm;height:1.707cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B000000081A015FB8E.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001B000000081A015FB8E.png" width="216" height="65" style="display:inline-block; margin:4px;width:5.715cm;height:1.707cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B000000081A015FB8E.png" /></td></tr></table>
 
 <ul>
-  <li>在 [11] 中：实现 C 代理方法的 [WsDaoJpaService] 类。
+  <li>en [11]：实现 C 代理方法的类 [WsDaoJpaService]。
   </li>
 </ul>
 
-<p>生成的 [WsDaoJpaService] 类实现了以下 [IWsDaoJpaService] 接口：</p>
+<p>生成的类 [WsDaoJpaService] 实现了以下接口 [IWsDaoJpaService]：</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">/**</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> * Service.as</span></span>
@@ -692,10 +694,10 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.AsyncToken;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> flash.utils.ByteArray;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.soap.types.*;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">               </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#9900cc">interface</span><span style="color:#000000"> IWsDaoJpaService</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">//Stub functions for the getAllClients operation</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">//用于 getAllClients 操作的存根函数</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#3f5fbf">/**</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">         * Call the operation on the server passing in the arguments defined in the WSDL file</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">         * @param getAllClients</span></span>
@@ -720,20 +722,20 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">第 11 行：由 [WsDaoJpaService] 类实现的 [IWsDaoJpaService] 接口</span>
+  <li><span style="color: #000000">第 11 行：由类 [WsDaoJpaService] 实现的接口 [IWsDaoJpaService]</span>
   </li>
-  <li><span style="color: #000000">第 19–31 行：为远程 Web 服务的 </span><b><span style="color: #000000">getAllClients</span></b><span style="color: #000000">() 方法生成的各种方法。其中唯一与 Web 服务实际暴露的方法高度匹配的是第 19 行中的方法。该方法名称正确，但签名不正确：远程 Web 服务的 </span><b><span style="color: #000000">getAllClients</span></b><span style="color: #000000">() 方法没有参数。</span>
+  <li><span style="color: #000000">第 19-31 行：为远程 Web 服务的 </span><b><span style="color: #000000">getAllClients</span></b><span style="color: #000000">() 方法生成的各种方法。 唯一与 Web 服务实际暴露的方法相近的是第 19 行。它名称正确但签名不正确：远程 Web 服务的 </span><b><span style="color: #000000">getAllClients</span></b><span style="color: #000000">() 方法没有参数。</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">生成的 C 代理中 </span><strong>getAll</strong><span style="color: #000000">Clients 方法的唯一参数属于以下 </span><strong>GetAllClients</strong><span style="color: #000000"> 类型：</span></p>
+<p><span style="color: #000000">生成的 C 语言代理中 </span><strong>getAllClients</strong><span style="color: #000000"> 方法的唯一参数类型为 </span><strong>GetAllClients</strong><span style="color: #000000">，具体如下：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">/**</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> * GetAllClients.as</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> * This file was auto-generated from WSDL by the Apache Axis2 generator modified by Adobe</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> * Any change made to this file will be overwritten when the code is re-generated.</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> */</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#9900cc">package</span><span style="color:#000000"> generated.webservices</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.utils.ObjectProxy;</span></span></span>
@@ -742,47 +744,47 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#3f5fbf">/**</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">     * Wrapper class for a operation required type</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">     */</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#9900cc">class</span><span style="color:#000000"> GetAllClients</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#3f5fbf">/**</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">         * Constructor, initializes the type class</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">         */</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> GetAllClients() {}</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">这是一个空类。这可能是因为目标方法 </span><em>getAllClients</em> <span style="color: #000000">不接受任何参数。</span></p>
-<p><span style="color: #000000">现在，让我们检查一下为 </span><em>Doctor</em><span style="color: #000000">、</span><em>Client</em><span style="color: #000000">、</span><em>Appointment</em> <span style="color: #000000">和 </span><em>Time Slot</em><span style="color: #000000"> 实体生成的类。例如，我们来看一下 </span><em>Client</em><span style="color: #000000"> 类：</span></p>
+<p><span style="color: #000000">这是一个空类。这可能与目标方法 </span><em>getAllClients</em> <span style="color: #000000">不接受参数这一事实相符。</span></p>
+<p><span style="color: #000000">现在，让我们来看看为实体 </span><em>Medecin</em><span style="color: #000000">、</span><em>Client</em><span style="color: #000000">、</span><em>Rv</em> <span style="color: #000000">和 </span><em>Creneau</em><span style="color: #000000"> 生成的类。 以类 </span><em>Client</em><span style="color: #000000"> 为例：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#9900cc">package</span><span style="color:#000000"> generated.webservices</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.utils.ObjectProxy;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> flash.utils.ByteArray;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.soap.types.*;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#9900cc">class</span><span style="color:#000000"> Client </span><span style="font-weight:bold;color:#0033ff">extends</span><span style="color:#000000"> generated.webservices.Personne</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> Client() {}</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><em>Client</em><span style="color: #000000"> 类也是空的。它（第 7 行）继承自以下 </span><em>Person</em><span style="color: #000000"> 类：</span></p>
+<p><span style="color: #000000">类 </span><em>Client</em><span style="color: #000000"> 也是空的。它（第 7 行）继承自以下类 </span><em>Personne</em><span style="color: #000000">：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#9900cc">package</span><span style="color:#000000"> generated.webservices</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.utils.ObjectProxy;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> flash.utils.ByteArray;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.soap.types.*;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#9900cc">class</span><span style="color:#000000"> Personne</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> Personne() {}</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> id:Number;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> nom:String;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> prenom:String;</span></span></span>
@@ -793,12 +795,12 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">第 11–15 行：这些是 JEE Web 服务中定义的 </span><i><span style="color: #000000">Person</span></i><span style="color: #000000"> 类的属性。</span>
+  <li><span style="color: #000000">第 11-15 行：这里包含在 Web 服务 JEE 中定义的类 </span><i><span style="color: #000000">Personne</span></i><span style="color: #000000"> 的属性。</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">现在我们已经有了 C 代理的主要元素，可以开始使用了。</span></p>
-<p><span style="color: #000000">客户端的主文件 [rdvmedecins01.xml] 如下所示：</span></p>
+<p><span style="color: #000000">至此，代理 C 的主要组件已准备就绪，我们可以开始使用它了。</span></p>
+<p><span style="color: #000000">客户端的主文件 [rdvmedecins01.xml] 如下：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:Application</span><span style="color:#000000"> xmlns:mx=&quot;</span><span style="color:#990000">http://www.adobe.com/2006/mxml</span><span style="color:#000000">&quot; layout=&quot;</span><span style="color:#990000">vertical</span><span style="color:#000000">&quot; creationComplete=&quot;init();&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -806,20 +808,20 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        &lt;![CDATA[</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> generated.webservices.Client;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// données</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// 数据</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> ws:WsDaoJpaService;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> clients:ArrayCollection;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> init():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadClients():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">...</span>            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> displayClient(client:Client):String{</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
@@ -830,97 +832,97 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:List</span><span style="color:#000000"> dataProvider=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">clients</span><span style="color:#990000">}</span><span style="color:#000000">&quot; labelFunction=&quot;</span><span style="color:#990000">displayClient</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;&lt;/mx:List&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:Button</span><span style="color:#000000"> label=&quot;</span><span style="color:#990000">Afficher les clients</span><span style="color:#000000">&quot; click=&quot;loadClients()&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">txtMsgErreur</span><span style="color:#000000">&quot; width=&quot;</span><span style="color:#990000">454</span><span style="color:#000000">&quot; height=&quot;</span><span style="color:#990000">75</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;/mx:Application&gt;</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">在此代码中，应区分以下几个元素：</span></p>
+<p><span style="color: #000000">在此代码中，需区分以下内容：</span></p>
 <ul>
-  <li><span style="color: #000000">应用程序定义（第 2 行）</span>
+  <li><span style="color: #000000">应用程序的定义（第 2 行）</span>
   </li>
-  <li><span style="color: #000000">其视图的描述（第27–30行）</span>
+  <li><span style="color: #000000">应用程序视图的描述（第27-30行）</span>
   </li>
-  <li><span style="color: #000000">&lt;mx:Script&gt; 标签内的 ActionScript 事件处理程序（第 3–26 行）。</span>
+  <li><span style="color: #000000">位于 &lt;mx:Script&gt; 标签内的 ActionScript 语言事件处理程序（第 3-26 行）。</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">首先，让我们来讨论一下该应用程序本身的定义及其视图的描述：</span></p>
+<p><span style="color: #000000">首先，让我们来分析应用程序本身的定义及其视图描述：</span></p>
 <ul>
   <li><span style="color: #000000">第 2 行：定义 </span>
     <ul>
-      <li><span style="color: #000000">视图容器内组件的布局。</span><i><span style="color: #000000">layout=&quot;vertical&quot;</span></i><span style="color: #000000"> 属性表示组件将上下排列。</span>
+      <li><span style="color: #000000">视图容器中组件的布局模式。</span><i><span style="color: #000000">layout=&quot;vertical&quot;</span></i><span style="color: #000000"> 属性表示组件将上下排列。</span>
       </li>
-      <li><span style="color: #000000">在视图实例化完成时（即所有组件均已实例化）将执行的方法。属性 </span><i><span style="color: #000000">creationComplete=&quot;init();&quot;</span></i><span style="color: #000000"> 表示应执行第 13 行中的 </span><i><span style="color: #000000">init</span></i><span style="color: #000000"> 方法。</span><i><span style="color: #000000">creationComplete </span></i><span style="color: #000000">是 </span><i><span style="color: #000000">Application</span></i><span style="color: #000000"> 类可触发的事件之一。</span>
+      <li><span style="color: #000000">视图实例化后需执行的方法，即 c.a.d。所有组件均已实例化之时。属性 </span><i><span style="color: #000000">creationComplete=&quot;init();&quot; </span></i><span style="color: #000000"> 表示应执行第13行中的</span><i><span style="color: #000000">方法init</span></i><span style="color: #000000">。creationComplete是</span><i><span style="color: #000000">类Application可</span></i><span style="color: #000000">触发的事件之一。</span>
       </li>
     </ul>
   </li>
-  <li><span style="color: #000000">第 27–30 行定义了视图的组件</span>
+  <li><span style="color: #000000">第27-30行定义了视图的组件</span>
   </li>
-  <li><span style="color: #000000">第 27 行：定义一个文本框</span>
+  <li><span style="color: #000000">第27行：定义一段文本</span>
   </li>
-  <li><span style="color: #000000">第 28 行：定义一个将存放客户列表的列表。</span><i><span style="color: #000000">dataProvider=&quot;</span></i><i><span style="color: #990000">{</span></i><i><span style="color: #000000">clients</span></i><i><span style="color: #990000">}</span></i><i><span style="color: #000000">&quot;</span></i><span style="color: #000000"> 标签指定了用于填充该列表的数据源。此处，列表将填充第 11 行定义的 </span><i><span style="color: #000000">clients</span></i><span style="color: #000000"> 对象。为了能够写入 </span><i><span style="color: #000000">dataProvider=&quot;</span></i><i><span style="color: #990000">{</span></i><i><span style="color: #000000">clients</span></i><i><span style="color: #990000">}</span></i><i><span style="color: #000000">&quot;，clients</span></i><span style="color: #000000"> 字段必须具有 [Bindable] 属性（第 10 行）。 该属性允许在 &lt;mx:Script&gt; 标签外部引用 ActionScript 变量。</span><i><span style="color: #000000">clients</span></i><span style="color: #000000"> 字段的类型为 </span><i><span style="color: #000000">ArrayCollection</span></i><span style="color: #000000">，这是一种 ActionScript 类型，允许存储对象列表——在本例中，即 </span><i><span style="color: #000000">Client</span></i><span style="color: #000000"> 类型的对象列表。</span>
+  <li><span style="color: #000000">第28行：定义一个列表，用于放置客户列表。标签 </span><i><span style="color: #000000">dataProvider=&quot;</span></i><i><span style="color: #990000">{</span></i><i><span style="color: #000000">clients</span></i><i><span style="color: #990000">}</span></i><i><span style="color: #000000">&quot;</span></i><span style="color: #000000"> 指定了填充该列表的数据源。在此，该列表将通过第11行定义的对象 </span><i><span style="color: #000000">clients</span></i><span style="color: #000000"> 进行填充。 为了能够写入 </span><i><span style="color: #000000">dataProvider=&quot;</span></i><i><span style="color: #990000">{</span></i><i><span style="color: #000000">clients</span></i><i><span style="color: #990000">}</span></i><i><span style="color: #000000">&quot;，</span></i><span style="color: #000000">字段 </span><i><span style="color: #000000">clients</span></i><span style="color: #000000"> 必须具有属性 [Bindable]（第 10 行）。 该属性允许在 &lt;mx:Script&gt; 标签外部引用变量 ActionScript。 字段 </span><i><span style="color: #000000">clients </span></i><span style="color: #000000">的类型为 ArrayCollection，这是一种 ActionScript 类型，用于存储对象列表，此处为 </span><i><span style="color: #000000">Client</span></i><span style="color: #000000"> 类型的对象列表。</span>
   </li>
-  <li><span style="color: #000000">第 29 行：一个按钮。其</span><i><span style="color: #000000">点击</span></i><span style="color: #000000">事件被处理。</span><i><span style="color: #000000">click=&quot;loadClients()&quot;</span></i><span style="color: #000000"> 属性表示当点击该按钮时，必须执行第 17 行中的 </span><i><span style="color: #000000">loadClients</span></i><span style="color: #000000"> 方法。该按钮将触发向 Web 服务请求客户列表的操作。</span>
+  <li><span style="color: #000000">第 29 行：一个按钮。其 </span><i><span style="color: #000000">click</span></i><span style="color: #000000"> 事件已得到处理。 </span><i><span style="color: #000000">click=&quot;loadClients()&quot;</span></i><span style="color: #000000"> 属性表示，当点击该按钮时，应执行第 17 行中的 </span><i><span style="color: #000000">loadClients</span></i><span style="color: #000000"> 方法。正是该按钮将触发向 Web 服务请求客户列表的操作。</span>
   </li>
-  <li><span style="color: #000000">第 30 行：一个文本框，用于显示服务器针对前一请求可能返回的任何错误消息。</span>
+  <li><span style="color: #000000">第 30 行：一个文本框，用于显示服务器针对前一次请求可能返回的错误消息。</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">第 27–30 行在 [设计] 选项卡中生成以下视图：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048B0000021365DDCBB0.png" width="582" height="266" style="display:inline-block; margin:4px;width:15.386cm;height:7.026cm;" class="odt-zoomable" data-zoom-src="images/100000000000048B0000021365DDCBB0.png" /></td></tr></table>
+<p><span style="color: #000000">第27-30行将在[Design]选项卡中生成以下视图：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000048B0000021365DDCBB0.png" width="582" height="266" style="display:inline-block; margin:4px;width:15.386cm;height:7.026cm;" class="odt-zoomable" data-zoom-src="images/100000000000048B0000021365DDCBB0.png" /></td></tr></table>
 
 <ul>
-  <li><span style="color: #000000">[1]：由第 27 行的 </span><i><span style="color: #000000">Label</span></i><span style="color: #000000"> 组件生成</span>
+  <li><span style="color: #000000">[1]：由第27行的组件</span><i><span style="color: #000000">Label</span></i><span style="color: #000000">生成</span>
   </li>
-  <li><span style="color: #000000">[2]: 由第 28 行中的 </span><i><span style="color: #000000">List</span></i><span style="color: #000000"> 组件生成</span>
+  <li><span style="color: #000000">[2]：由第 28 行中的组件 </span><i><span style="color: #000000">List</span></i><span style="color: #000000"> 生成</span>
   </li>
-  <li><span style="color: #000000">[3]: 由第 29 行中的 </span><i><span style="color: #000000">Button</span></i><span style="color: #000000"> 组件生成</span>
+  <li><span style="color: #000000">[3]：由第 29 行中的组件 </span><i><span style="color: #000000">Button</span></i><span style="color: #000000"> 生成</span>
   </li>
-  <li><span style="color: #000000">[4]: 由第 30 行 </span><i><span style="color: #000000">Text</span></i><span style="color: #000000"> 组件生成</span>
+  <li><span style="color: #000000">[4]：由第 30 行中的组件 </span><i><span style="color: #000000">Text</span></i><span style="color: #000000"> 生成</span>
   </li>
-  <li><span style="color: #000000">[5]: 执行示例</span>
+  <li><span style="color: #000000">[5]：一个执行示例</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">现在让我们来查看该页面的 ActionScript 代码。这段代码负责处理视图的事件。</span></p>
+<p><span style="color: #000000">现在让我们查看页面中的代码 ActionScript。该代码负责处理视图事件。</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:Application</span> xmlns:mx=&quot;<span style="color:#990000">http://www.adobe.com/2006/mxml</span>&quot; layout=&quot;<span style="color:#990000">vertical</span>&quot; creationComplete=&quot;init();&quot;<span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#006633">&lt;mx:Script&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        &lt;![CDATA[</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> generated.webservices.Client;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// données</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// 数据</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> ws:WsDaoJpaService;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> clients:ArrayCollection;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> init():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on instancie le proxy du service web</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// 实例化 Web 服务代理</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                ws=</span><span style="font-weight:bold;color:#0033ff">new</span><span style="color:#000000"> WsDaoJpaService();</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on configure les gestionnaires d&#x27;évts</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// 配置事件处理程序</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                ws.addgetAllClientsEventListener(loadClientsCompleted);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                ws.addEventListener(FaultEvent.FAULT,loadClientsFault);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadClients():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on demande la liste des clients</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// 请求客户端列表</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                ws.getAllClients(</span><span style="font-weight:bold;color:#0033ff">new</span><span style="color:#000000"> GetAllClients());</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadClientsCompleted(event:GetAllClientsResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on récupère les clients dans le résultat envoyé</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// 从返回的结果中获取客户端</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                clients=event.result </span><span style="font-weight:bold;color:#0033ff">as</span><span style="color:#000000"> ArrayCollection;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadClientsFault(event:FaultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on affiche le msg d&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// 显示错误消息</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                txtMsgErreur.text=event.fault.message;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> displayClient(client:Client):String{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on affiche un client</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// 显示一个客户</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="font-weight:bold;color:#0033ff">return</span><span style="color:#000000"> client.nom + </span><span style="font-weight:bold;color:#990000">&quot; &quot;</span><span style="color:#000000"> + client.prenom;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            } </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        ]]&gt;</span></span>
@@ -929,104 +931,104 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:List</span><span style="color:#000000"> dataProvider=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">clients</span><span style="color:#990000">}</span><span style="color:#000000">&quot; labelFunction=&quot;</span><span style="color:#990000">displayClient</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;&lt;/mx:List&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:Button</span><span style="color:#000000"> label=&quot;</span><span style="color:#990000">Afficher les clients</span><span style="color:#000000">&quot; click=&quot;loadClients()&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">txtMsgErreur</span><span style="color:#000000">&quot; width=&quot;</span><span style="color:#990000">454</span><span style="color:#000000">&quot; height=&quot;</span><span style="color:#990000">75</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">第 9 行：</span><i><span style="color: #000000">ws</span></i><span style="color: #000000"> 指代类型为 </span><i><span style="color: #000000">WsDaoJpaService</span></i><span style="color: #000000"> 的 C 代理，该类是之前生成的，实现了访问远程 Web 服务的方法。</span>
+  <li><span style="color: #000000">第 9 行：</span><i><span style="color: #000000">ws </span></i><span style="color: #000000">将指定类型为 </span><i><span style="color: #000000">WsDaoJpaService</span></i><span style="color: #000000"> 的 C 代理，即之前生成的、实现远程 Web 服务访问方法的类。</span>
   </li>
-  <li><span style="color: #000000">第 13 行：当视图被实例化时（第 1 行），将执行 </span><i><span style="color: #000000">init</span></i><span style="color: #000000"> 方法</span>
+  <li><span style="color: #000000">第 13 行：当视图被实例化时（第 1 行），将执行方法 </span><i><span style="color: #000000">init</span></i>
   </li>
-  <li><span style="color: #000000">第 15 行：创建 C 代理的实例</span>
+  <li><span style="color: #000000">第15行：创建了一个C代理实例</span>
   </li>
-  <li><span style="color: #000000">第 17 行：将一个事件处理程序与事件“异步 </span><i><span style="color: #000000">GetAllClients</span></i><span style="color: #000000"> 方法已成功完成”相关联。 对于远程 Web 服务的任何方法 </span><i><span style="color: #000000">m</span></i><span style="color: #000000">，C 代理都实现了 </span><i><span style="color: #000000">addmEventListener</span></i><span style="color: #000000"> 方法，该方法允许将事件处理程序与“异步方法 </span><i><span style="color: #000000">m</span></i><span style="color: #000000"> 已成功完成”事件关联。此处第 17 行表示，当 Flex 客户端收到客户端列表时，必须执行第 26 行中的 </span><i><span style="color: #000000">loadClientsCompleted</span></i><span style="color: #000000"> 方法。</span>
+  <li><span style="color: #000000">第 17 行：为事件“异步方法 </span><i><span style="color: #000000">GetAllClients</span></i><span style="color: #000000"> 已成功完成”关联了一个事件处理程序。 对于远程 Web 服务中的任何 </span><i><span style="color: #000000">m</span></i><span style="color: #000000"> 方法，C 代理都会实现一个 </span><i><span style="color: #000000">addmEventListener</span></i><span style="color: #000000"> 方法，该方法允许将处理程序关联到“异步方法 </span><i><span style="color: #000000">m</span></i><span style="color: #000000"> 已成功完成”事件。 此处，第 17 行表示当 Flex 客户端收到客户端列表时，应执行第 26 行中的 </span><i><span style="color: #000000">loadClientsCompleted</span></i><span style="color: #000000"> 方法。</span>
   </li>
-  <li><span style="color: #000000">第 18 行：将一个事件处理程序与事件“C 代理的某个异步方法以失败告终”相关联。此处，第 18 行表示，每当 C 代理向 Web 服务 S 发出的异步请求失败时，第 31 行处的 </span><i><span style="color: #000000">loadClientsFault</span></i><span style="color: #000000"> 方法必须被执行。在此，唯一会发出的请求就是请求客户端列表的那个。</span>
+  <li><span style="color: #000000">第 18 行：为“C 代理的异步方法以失败结束”事件关联了一个事件处理程序。 此处第18行表示，每当C代理向Web服务S发出的异步请求失败时，就应执行第31行的</span><i><span style="color: #000000">方法loadClientsFault</span></i><span style="color: #000000">。此处唯一会发出的请求是获取客户端列表的请求。</span>
   </li>
-  <li><span style="color: #000000">最终，第 13 行的 </span><i><span style="color: #000000">init</span></i><span style="color: #000000"> 方法实例化了 C 代理，并为后续将发出的异步请求定义了事件处理程序。</span>
+  <li><span style="color: #000000">最终，第13行的</span><i><span style="color: #000000">方法</span></i><span style="color: #000000">init实例化了C代理，并为后续将发出的异步请求定义了事件处理程序。</span>
   </li>
-  <li><span style="color: #000000">第 21 行：点击 [显示客户端] 按钮（第 44 行）时执行的方法</span>
+  <li><span style="color: #000000">第21行：点击按钮[Afficher les clients]（第44行）时执行的方法</span>
   </li>
-  <li><span style="color: #000000">第 23 行：执行代理 C 的异步 </span><i><span style="color: #000000">getAllClients</span></i><span style="color: #000000"> 方法。该方法接收一个 </span><i><span style="color: #000000">GetAllClients</span></i><span style="color: #000000"> 实例，该实例负责封装被调用远程方法的参数。此处没有参数，因此创建了一个空实例。</span><i><span style="color: #000000">getAllClients</span></i><span style="color: #000000"> 方法</span><span style="color: #000000">是异步的，执行过程不会等待服务器返回的数据。特别是，用户可以继续与视图进行交互。 用户触发的事件将继续被处理。得益于 init 方法，我们知道：</span>
+  <li><span style="color: #000000">第 23 行：执行代理 C 的异步方法 </span><i><span style="color: #000000">getAllClients</span></i><span style="color: #000000">。向其传递一个 </span><i><span style="color: #000000">GetAllClients</span></i><span style="color: #000000"> 实例，该实例负责封装被调用的远程方法的参数。此处没有参数。 创建了一个空实例。方法 </span><i><span style="color: #000000">getAllClients </span></i><span style="color: #000000">是异步的。执行过程会继续，而不会等待服务器返回的数据。用户可以继续与视图进行交互。用户触发的事件将继续被处理。通过方法 init，我们知道：</span>
     <ul>
-      <li><span style="color: #000000">当 Flex 客户端收到客户端列表时，将执行 </span><i><span style="color: #000000">loadClientsCompleted</span></i><span style="color: #000000"> 方法（第 26 行）</span>
+      <li><span style="color: #000000">当 Flex 客户端收到客户列表时，将执行方法 </span><i><span style="color: #000000">loadClientsCompleted</span></i><span style="color: #000000">（第 26 行）</span>
       </li>
-      <li><span style="color: #000000">如果请求出现错误，将执行 </span><i><span style="color: #000000">loadClientsFault</span></i><span style="color: #000000"> 方法（第 31 行） </span>
+      <li><span style="color: #000000">如果请求以错误结束，则将执行方法 </span><i><span style="color: #000000">loadClientsFault</span></i><span style="color: #000000">（第 31 行）。 </span>
       </li>
     </ul>
   </li>
-  <li><span style="color: #000000">第 28 行：从事件中获取客户列表。 我们知道远程 Web 服务的 getAllClients 方法返回一个列表。我们将该列表赋值给第 11 行的 </span><i><span style="color: #000000">clients</span></i><span style="color: #000000"> 字段。此处需要进行类型转换。由于第 43 行的列表与 clients 字段绑定，因此会收到数据已更改的通知。随后它将显示客户列表。它将使用 </span><i><span style="color: #000000">displayClient</span></i><span style="color: #000000"> 方法（第 43 行）显示 clients 列表中的每个项目。</span>
+  <li><span style="color: #000000">第 28 行：在事件中获取客户列表。我们知道远程 Web 服务的 </span><i><span style="color: #000000">getAllClients</span></i><span style="color: #000000"> 方法会返回一个列表。我们将该列表放入第 11 行的 </span><i><span style="color: #000000">clients</span></i><span style="color: #000000"> 字段中。此处需要进行类型转换。 由于第43行的列表与“客户”字段建立了绑定（Bindable），该字段会收到数据变更的通知。随后，它将显示客户列表。它将</span><i><span style="color: #000000">使用方法displayClient</span></i><span style="color: #000000">（第43行）</span><i><span style="color: #000000">显示列表clients中的</span></i><span style="color: #000000">每个元素。</span>
   </li>
-  <li><span style="color: #000000">第 36 行：</span><i><span style="color: #000000">displayClient</span></i><span style="color: #000000"> 方法接受 </span><i><span style="color: #000000">Client</span></i><span style="color: #000000"> 类型的参数。它必须返回列表应为此客户显示的字符串。此处为姓名和姓氏（第 38 行）。</span>
+  <li><span style="color: #000000">第36行：方法displayClient</span><i><span style="color: #000000">接收类型Client</span></i><span style="color: #000000">。它必须返回列表应为该客户显示的字符串。此处为姓名（第38行）。</span>
   </li>
-  <li><span style="color: #000000">第 31 行：当 Web 服务请求失败时执行的方法。它接收一个 </span><i><span style="color: #000000">FaultEvent</span></i><span style="color: #000000"> 类型的参数。该类有一个 </span><i><span style="color: #000000">`fault`</span></i><span style="color: #000000"> 字段，用于封装服务器返回的错误。`</span><i><span style="color: #000000">fault.message` </span></i><span style="color: #000000">是伴随该错误的错误信息。</span>
+  <li><span style="color: #000000">第 31 行：当 Web 服务请求失败时执行的方法。它接收一个类型为 </span><i><span style="color: #000000">FaultEvent</span></i><span style="color: #000000"> 的参数。 该类有一个 </span><i><span style="color: #000000">fault</span></i><span style="color: #000000"> 字段，用于封装服务器返回的错误。</span><i><span style="color: #000000">fault.message </span></i><span style="color: #000000">是随错误返回的错误信息。</span>
   </li>
-  <li><span style="color: #000000">第 33 行：错误消息将显示在为此目的提供的文本框中。</span>
+  <li><span style="color: #000000">第 33 行：错误消息显示在专门用于此目的的文本框中。</span>
   </li>
 </ul>
 
 <p><span style="color: #000000">应用程序构建完成后，其可执行代码位于 Flex 项目的 [bin-debug] 文件夹中：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000166000001610C9B8123.png" width="179" height="177" style="display:inline-block; margin:4px;width:4.736cm;height:4.671cm;" class="odt-zoomable" data-zoom-src="images/1000000000000166000001610C9B8123.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000166000001610C9B8123.png" width="179" height="177" style="display:inline-block; margin:4px;width:4.736cm;height:4.671cm;" class="odt-zoomable" data-zoom-src="images/1000000000000166000001610C9B8123.png" /></td></tr></table>
 
-<p><span style="color: #000000">上文中的</span></p>
+<p><span style="color: #000000">上文所述，</span></p>
 <ul>
-  <li><span style="color: #000000">文件 [rdvmedecins01.html] 代表浏览器将向 Web 服务器请求以获取 Flex 客户端的 HTML 文件</span>
+  <li><span style="color: #000000">文件 [rdvmedecins01.html] 代表浏览器将向 Web 服务器请求的 HTML 文件，以获取 Flex 客户端</span>
   </li>
-  <li><span style="color: #000000">文件 [rdvmedecins01.swf] 是 Flex 客户端二进制文件，它将被嵌入发送到浏览器的 HTML 页面中，随后由浏览器的 Flash Player 插件执行。</span>
+  <li><span style="color: #000000">文件 [rdvmedecins01.swf] 是 Flex 客户端的二进制文件，它将被封装在发送给浏览器的 HTML 页面中，随后由浏览器的 Flash Player 插件执行。</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">现在我们可以运行 Flex 客户端了。首先，我们需要设置其所需的运行时环境。让我们回到之前测试过的客户端/服务器架构：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000056A0000011C27005F16.png" width="680" height="139" style="display:inline-block; margin:4px;width:17.997cm;height:3.688cm;" class="odt-zoomable" data-zoom-src="images/100000000000056A0000011C27005F16.png" /></td></tr></table>
+<p><span style="color: #000000">现在我们可以准备运行 Flex 客户端了。但在那之前，我们需要先搭建其所需的运行环境。让我们回到之前测试过的客户端/服务器架构：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000056A0000011C27005F16.png" width="680" height="139" style="display:inline-block; margin:4px;width:17.997cm;height:3.687cm;" class="odt-zoomable" data-zoom-src="images/100000000000056A0000011C27005F16.png" /></td></tr></table>
 
 <p><strong>服务器端</strong><span style="color: #000000">：</span></p>
 <ul>
-  <li><span style="color: #000000">启动 MySQL 数据库管理系统</span>
+  <li><span style="color: #000000">启动 SGBD MySQL</span>
   </li>
-  <li><span style="color: #000000">启动 GlassFish 服务器</span>
+  <li><span style="color: #000000">启动 Glassfish 服务器</span>
   </li>
-  <li><span style="color: #000000">如果尚未部署，请部署用于预约的 JEE Web 服务</span>
+  <li><span style="color: #000000">如果尚未部署，请部署日程安排 Web 服务 JEE</span>
   </li>
-  <li><span style="color: #000000">可选：测试其中一个先前客户端，以验证服务器端一切就绪。</span>
+  <li><span style="color: #000000">如有必要，测试其中一个先前客户端，以验证服务器端是否一切就绪。</span>
   </li>
 </ul>
 
 <p><strong>客户端</strong><span style="color: #000000">：</span></p>
-<p><span style="color: #000000">启动将托管 Flex 应用程序的 Apache 服务器。此处我们使用 </span><em><span style="color: #000000">Wamp</span></em><span style="color: #000000"> 工具。借助该工具，我们可以为 Flex 项目的 [bin-debug] 文件夹分配一个别名。</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000515000001546290F22B.png" width="651" height="170" style="display:inline-block; margin:4px;width:17.212cm;height:4.498cm;" class="odt-zoomable" data-zoom-src="images/1000000000000515000001546290F22B.png" /></td></tr></table>
+<p><span style="color: #000000">启动将处理 Flex 应用程序请求的 Apache 服务器。此处我们使用工具 </span><em><span style="color: #000000">Wamp</span></em><span style="color: #000000">。借助该工具，我们可以为 Flex 项目的 [bin-debug] 文件夹分配一个别名。</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000515000001546290F22B.png" width="651" height="170" style="display:inline-block; margin:4px;width:17.212cm;height:4.498cm;" class="odt-zoomable" data-zoom-src="images/1000000000000515000001546290F22B.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">Wamp图标位于屏幕底部 [1]</span>
   </li>
-  <li><span style="color: #000000">左键单击 </span><i>Wamp</i><span style="color: #000000"> 图标，选择 </span><i>Apache</i><span style="color: #000000"> 选项 [2] /</span><i> 别名目录 </i><span style="color: #000000">[3, 4]</span>
+  <li><span style="color: #000000">左键</span><i>单击</i><span style="color: #000000">图标 Wamp，选择选项 </span><i>Apache </i><span style="color: #000000">[2] /</span><i> 别名目录 </i><span style="color: #000000">[3, 4]</span>
   </li>
-  <li><span style="color: #000000">选择 [5] 选项：</span><i>添加别名</i>
-  </li>
-</ul>
-
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A5000000E45E640BC3.png" width="595" height="114" style="display:inline-block; margin:4px;width:15.73cm;height:3.016cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A5000000E45E640BC3.png" /></td></tr></table>
-
-<ul>
-  <li><span style="color: #000000">在 [6] 中，为将要执行的 Web 应用程序指定一个别名（任意名称）</span>
-  </li>
-  <li><span style="color: #000000">在 [7] 中，指定将使用此别名的 Web 应用程序的根目录：即我们刚刚构建的 Flex 项目的 [bin-debug] 文件夹。</span>
+  <li><span style="color: #000000">选择选项 [5]：</span><i>添加别名</i>
   </li>
 </ul>
 
-<p><span style="color: #000000">让我们回顾一下 Flex 项目中 [bin-debug] 文件夹的结构：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002A20000016A72845621.png" width="337" height="181" style="display:inline-block; margin:4px;width:8.916cm;height:4.789cm;" class="odt-zoomable" data-zoom-src="images/10000000000002A20000016A72845621.png" /></td></tr></table>
-
-<p><span style="color: #000000">[rdvmedecins01.html] 文件是 Flex 应用程序的 HTML 文件。得益于我们刚刚为 [bin-debug] 文件夹创建的别名，可以通过 URL [http://localhost/rdvmedecins/rdvmedecins01.html] 访问该文件。我们需要在安装了 Flash Player 9 或更高版本插件的浏览器中访问此 URL：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E9000001D9BE7DF49B.png" width="629" height="237" style="display:inline-block; margin:4px;width:16.63cm;height:6.258cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E9000001D9BE7DF49B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004A5000000E45E640BC3.png" width="595" height="114" style="display:inline-block; margin:4px;width:15.73cm;height:3.016cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A5000000E45E640BC3.png" /></td></tr></table>
 
 <ul>
-  <li><span style="color: #000000">在 [1] 中，Flex 应用程序的 URL</span>
+  <li><span style="color: #000000">在 [6] 中为即将运行的 Web 应用程序指定一个别名（任意名称）</span>
   </li>
-  <li><span style="color: #000000">在 [2] 中，我们请求客户端列表</span>
+  <li><span style="color: #000000">在 [7] 中指定将使用该别名的 Web 应用程序的根目录：即我们刚刚构建的 Flex 项目的 [bin-debug] 文件夹。</span>
   </li>
-  <li><span style="color: #000000">在 [3] 中，当一切正常时获得的结果</span>
+</ul>
+
+<p><span style="color: #000000">回顾一下 Flex 项目中 [bin-debug] 文件夹的结构：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002A20000016A72845621.png" width="337" height="181" style="display:inline-block; margin:4px;width:8.916cm;height:4.789cm;" class="odt-zoomable" data-zoom-src="images/10000000000002A20000016A72845621.png" /></td></tr></table>
+
+<p><span style="color: #000000">文件 [rdvmedecins01.html] 是 Flex 应用程序的 HTML 文件。借助我们刚刚在文件夹 [bin-debug] 上创建的别名，可以通过 URL [http://localhost/rdvmedecins/rdvmedecins01.html] 访问该文件。 我们将在安装了 Flash Player 9 或更高版本插件的浏览器中访问该网址：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004E9000001D9BE7DF49B.png" width="629" height="237" style="display:inline-block; margin:4px;width:16.63cm;height:6.258cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E9000001D9BE7DF49B.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">在 [1]（即 Flex 应用程序的 URL）</span>
   </li>
-  <li><span style="color: #000000">在 [4] 中，当 Web 服务已停止运行时，我们仍请求客户端列表所获得的结果。</span>
+  <li><span style="color: #000000">在 [2] 中，我们请求客户列表</span>
+  </li>
+  <li><span style="color: #000000">在 [3] 中，显示一切正常时的结果</span>
+  </li>
+  <li><span style="color: #000000">在 [4] 中，当 Web 服务已停止运行时请求显示客户所获得的结果。</span>
   </li>
 </ul>
 
@@ -1096,7 +1098,7 @@
 <span class="normal"><a href="#__codelineno-0-63">63</a></span>
 <span class="normal"><a href="#__codelineno-0-64">64</a></span>
 <span class="normal"><a href="#__codelineno-0-65">65</a></span>
-<span class="normal"><a href="#__codelineno-0-66">66</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">&lt;!--</span><span class="w"> </span><span class="n">saved</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">url</span><span class="o">=</span><span class="p">(</span><span class="mi">0014</span><span class="p">)</span><span class="n">about</span><span class="p">:</span><span class="n">internet</span><span class="w"> </span><span class="o">--&gt;</span>
+<span class="normal"><a href="#__codelineno-0-66">66</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">&lt;!--</span><span class="w"> </span><span class="err">保存自</span><span class="w"> </span><span class="n">url</span><span class="o">=</span><span class="p">(</span><span class="mi">0014</span><span class="p">)</span><span class="n">about</span><span class="p">:</span><span class="n">internet</span><span class="w"> </span><span class="o">--&gt;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="o">&lt;</span><span class="n">html</span><span class="w"> </span><span class="n">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="o">&gt;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="o">&lt;!--</span><span class="w"> </span>
@@ -1112,9 +1114,9 @@
 <a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="o">&lt;</span><span class="n">meta</span><span class="w"> </span><span class="n">http</span><span class="o">-</span><span class="n">equiv</span><span class="o">=</span><span class="s">&quot;Content-Type&quot;</span><span class="w"> </span><span class="n">content</span><span class="o">=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
 <a id="__codelineno-0-16" name="__codelineno-0-16"></a>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="o">&lt;!--</span><span class="w">  </span><span class="n">BEGIN</span><span class="w"> </span><span class="n">Browser</span><span class="w"> </span><span class="n">History</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="o">--&gt;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="o">&lt;!--</span><span class="w">   </span><span class="n">BEGIN</span><span class="w"> </span><span class="err">浏览器历史记录必填部分</span><span class="w"> </span><span class="o">--&gt;</span>
 <a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="o">&lt;</span><span class="n">link</span><span class="w"> </span><span class="n">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="s">&quot;history/history.css&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="o">&lt;!--</span><span class="w">  </span><span class="n">END</span><span class="w"> </span><span class="n">Browser</span><span class="w"> </span><span class="n">History</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="o">--&gt;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="o">&lt;!--</span><span class="w">   </span><span class="n">END</span><span class="w"> </span><span class="err">需要浏览器历史记录的部分</span><span class="w"> </span><span class="o">--&gt;</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20"></a>
 <a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
 <a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="o">&lt;</span><span class="n">script</span><span class="w"> </span><span class="n">src</span><span class="o">=</span><span class="s">&quot;AC_OETags.js&quot;</span><span class="w"> </span><span class="n">language</span><span class="o">=</span><span class="s">&quot;javascript&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
@@ -1122,12 +1124,12 @@
 <a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="o">&lt;</span><span class="n">script</span><span class="w"> </span><span class="n">language</span><span class="o">=</span><span class="s">&quot;JavaScript&quot;</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
 <a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="o">&lt;!--</span>
 <a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="c1">// -----------------------------------------------------------------------------</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="c1">// Globals</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="c1">// Major version of Flash required</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="c1">// 全局变量</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="c1">// 需要 Flash 的主要版本</span>
 <a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="kt">var</span><span class="w"> </span><span class="n">requiredMajorVersion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="c1">// Minor version of Flash required</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="c1">// 需要 Flash 的次要版本</span>
 <a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="kt">var</span><span class="w"> </span><span class="n">requiredMinorVersion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="c1">// Minor version of Flash required</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="c1">// 所需的 Flash 次要版本</span>
 <a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="kt">var</span><span class="w"> </span><span class="n">requiredRevision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">124</span><span class="p">;</span>
 <a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="c1">// -----------------------------------------------------------------------------</span>
 <a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="c1">// --&gt;</span>
@@ -1137,7 +1139,7 @@
 <a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="o">&lt;</span><span class="n">body</span><span class="w"> </span><span class="n">scroll</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="o">&gt;</span>
 <a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="o">&lt;</span><span class="n">script</span><span class="w"> </span><span class="n">language</span><span class="o">=</span><span class="s">&quot;JavaScript&quot;</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
 <a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="o">&lt;!--</span>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="c1">// Version check for the Flash Player that has the ability to start Player Product Install (6.0r65)</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="c1">// 具有启动播放器产品安装（6.0r65）功能的 Flash Player 版本检查</span>
 <a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="p">....</span>
 <a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="c1">// --&gt;</span>
 <a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
@@ -1163,22 +1165,22 @@
 <a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
 <a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p><span style="color: #000000">页面主体从第 39 行开始。它不包含标准 HTML，而是一个类型为 &quot;application/x-shockwave-flash&quot;（第 60 行）的对象（第 47 行）。 该文件为 [rdvmedecins01.swf]（第 54 行），位于 Flex 项目的 [bin-debug] 文件夹中。这是一个大文件：仅此简单示例就约有 600 KB。</span></p>
-<h2 id="62-flex">6.2. <span style="color: #4f81bd">第二个 Flex 客户端</span></h2>
-<p><span style="color: #000000">第二个 Flex 客户端将不使用为第一个客户端生成的 C 代理。我们希望说明，尽管该方法比我们在此介绍的方法具有优势，但这一步并非必不可少。</span></p>
-<p><span style="color: #000000">该项目的演变过程如下：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A800000215A95C6F33.png" width="596" height="266" style="display:inline-block; margin:4px;width:15.769cm;height:7.05cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A800000215A95C6F33.png" /></td></tr></table>
+<p><span style="color: #000000">页面主体从第 39 行开始。它不包含经典的 HTML 代码，而是一个类型为 &quot;application/x-shockwave-flash&quot;（第 60 行）的对象（第 47 行）。 这就是文件 [rdvmedecins01.swf]（第 54 行），可在 Flex 项目的 [bin-debug] 文件夹中看到。这是一个体积较大的文件：仅此简单示例就约有 600 KB。</span></p>
+<h2 id="62-flex">6.2. <span style="color: #4f81bd"><strong>第二个 Flex 客户端</strong></span></h2>
+<p><span style="color: #000000">第二个 Flex 客户端将不使用为第一个客户端生成的 C 语言代理。我们想说明，尽管该步骤相对于接下来将介绍的方法具有优势，但它并非必不可少。</span></p>
+<p><span style="color: #000000">项目演变如下：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004A800000215A95C6F33.png" width="596" height="267" style="display:inline-block; margin:4px;width:15.769cm;height:7.052cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A800000215A95C6F33.png" /></td></tr></table>
 
 <ul>
-  <li><span style="color: #000000">在 [1] 中，新的 Flex 应用程序</span>
+  <li><span style="color: #000000">演变为 [1]（新的 Flex 应用程序）</span>
   </li>
-  <li><span style="color: #000000">在 [2] 相关可执行文件中</span>
+  <li><span style="color: #000000">变为 [2] 及其关联的可执行文件</span>
   </li>
-  <li><span style="color: #000000">在 [3] 新的视图中：我们将显示医生列表。</span>
+  <li><span style="color: #000000">[3] 新的视图：我们将显示医生列表。</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">该应用程序的 MXML 代码 [rdvmedecins02.mxml] 如下：</span></p>
+<p><span style="color: #000000">应用程序 [rdvmedecins02.mxml] 的代码 MXML 如下：</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:Application</span><span style="color:#000000"> xmlns:mx=&quot;</span><span style="color:#990000">http://www.adobe.com/2006/mxml</span><span style="color:#000000">&quot; layout=&quot;</span><span style="color:#990000">vertical</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1187,31 +1189,31 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.events.ResultEvent;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.events.FaultEvent;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.collections.ArrayCollection;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// données</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// 数据</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> medecins:ArrayCollection;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadMedecins():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on demande la liste des médecins</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// 请求医生列表</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                wsrdvmedecins.getAllMedecins.send();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadMedecinsCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on récupère les médecins</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// 获取医生</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                medecins=event.result </span><span style="font-weight:bold;color:#0033ff">as</span><span style="color:#000000"> ArrayCollection;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadMedecinsFault(event:FaultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on affiche le msg d&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// 显示错误信息</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                txtMsgErreur.text=event.fault.message;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            } </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// affichage d&#x27;un médecin</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// 显示某位医生</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> displayMedecin(medecin:Object):String{</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="font-weight:bold;color:#0033ff">return</span><span style="color:#000000"> medecin.nom + </span><span style="font-weight:bold;color:#990000">&quot; &quot;</span><span style="color:#000000"> + medecin.prenom;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            } </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        ]]&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#006633">&lt;/mx:Script&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:WebService</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">wsrdvmedecins</span><span style="color:#000000">&quot; </span></span></span>
@@ -1225,27 +1227,27 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:List</span><span style="color:#000000"> dataProvider=&quot;</span><span style="color:#990000">{</span><span style="color:#000000">medecins</span><span style="color:#990000">}</span><span style="color:#000000">&quot; labelFunction=&quot;</span><span style="color:#990000">displayMedecin</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">&gt;&lt;/mx:List&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:Button</span><span style="color:#000000"> label=&quot;</span><span style="color:#990000">Afficher les médecins</span><span style="color:#000000">&quot; click=&quot;loadMedecins()&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;mx:Text</span><span style="color:#000000"> id=&quot;</span><span style="color:#990000">txtMsgErreur</span><span style="color:#000000">&quot; width=&quot;</span><span style="color:#990000">300</span><span style="color:#000000">&quot; height=&quot;</span><span style="color:#990000">113</span><span style="color:#000000">&quot;</span><span style="color:#0000ff">/&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;/mx:Application&gt;</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">我们仅对新功能进行说明：</span></p>
+<p><span style="color: #000000">我们仅对新增内容进行说明：</span></p>
 <ul>
-  <li><span style="color: #000000">第 42–45 行：新的视图。它与之前的视图完全相同，只是已调整为显示医生而非客户。</span>
+  <li><span style="color: #000000">第 42 至 45 行：新视图。它与之前的视图完全相同，只是经过调整以显示医生而非客户。</span>
   </li>
-  <li><span style="color: #000000">第 35–41 行：此处通过 &lt;</span><b><span style="color: #000000">mx:WebService</span></b><span style="color: #000000">&gt; 标签（第 35 行）描述了 Web 服务。此处不再使用上一版本中使用的 C 语言代理。</span>
+  <li><span style="color: #000000">第35-41行：此处的Web服务由&lt;</span><b><span style="color: #000000">mx:WebService</span></b><span style="color: #000000">&gt;标签（第35行）描述。此处不再使用上一版本中使用的C代理。</span>
   </li>
-  <li><span style="color: #000000">第 35 行：</span><i><span style="color: #000000">id</span></i><span style="color: #000000"> 属性为 Web 服务指定了一个名称。</span>
+  <li><span style="color: #000000">第 35 行：</span><i><span style="color: #000000">id</span></i><span style="color: #000000"> 属性为 Web 服务命名。</span>
   </li>
-  <li><span style="color: #000000">第 36 行：</span><i><span style="color: #000000">wsdl</span></i><span style="color: #000000"> 属性指定 Web 服务 WSDL 文件的 URI。该 URI 与前一版本客户端所用的一致，并在第</span><a href="#uri-service-web"><u><span style="color: #0563c1"> 4.10.2</span></u></a><span style="color: #000000"> 节中定义。</span>
+  <li><span style="color: #000000">第 36 行：</span><i><span style="color: #000000">wsdl</span></i><span style="color: #000000"> 属性指定了 Web 服务中 WSDL 文件的 URI。该 URI 与前一个客户端使用的 URI 相同，并在第</span><a href="j2ee-uue-web-uu.html#uri-service-web"><u><span style="color: #0563c1"> 4.10.2</span></u></a><span style="color: #000000"> 节中进行了定义。</span>
   </li>
-  <li><span style="color: #000000">第 37–40 行：使用 &lt;</span><i><span style="color: #000000">mx:operation</span></i><span style="color: #000000">&gt; 标签定义远程 Web 服务的方法</span>
+  <li><span style="color: #000000">第 37-40 行：通过 &lt;</span><i><span style="color: #000000">mx:operation</span></i><span style="color: #000000">&gt; 标签定义远程 Web 服务的某个方法</span>
   </li>
-  <li><span style="color: #000000">第 37 行：通过 </span><i><span style="color: #000000">name</span></i><span style="color: #000000"> 属性定义被引用的方法。此处引用了远程方法 </span><i><span style="color: #000000">getAllMedecins</span></i><span style="color: #000000">。</span>
+  <li><span style="color: #000000">第 37 行：引用的方法由 </span><i><span style="color: #000000">name</span></i><span style="color: #000000"> 属性定义。此处我们引用了远程方法 </span><i><span style="color: #000000">getAllMedecins</span></i><span style="color: #000000">。</span>
   </li>
-  <li><span style="color: #000000">第 38 行：我们定义了操作成功时（</span><i><span style="color: #000000">result</span></i><span style="color: #000000"> 属性）和失败时（</span><i><span style="color: #000000">fault</span></i><span style="color: #000000"> 属性）要执行的方法。</span>
+  <li><span style="color: #000000">第 38 行：定义操作成功时（</span><i><span style="color: #000000">result</span></i><span style="color: #000000"> 属性）和失败时（</span><i><span style="color: #000000">fault</span></i><span style="color: #000000"> 属性）要执行的方法。</span>
   </li>
-  <li><span style="color: #000000">第 39 行：使用 &lt;</span><i><span style="color: #000000">mx:request</span></i><span style="color: #000000">&gt; 标签定义操作的参数。此处，远程方法 </span><i><span style="color: #000000">getAllMedecins</span></i><span style="color: #000000"> 没有参数，因此留空。对于接受参数 </span><i><span style="color: #000000">param1 </span></i><span style="color: #000000">和 </span><i><span style="color: #000000">param2 </span></i><span style="color: #000000">的方法，我们会写为：</span>
+  <li><span style="color: #000000">第 39 行：&lt;</span><i><span style="color: #000000">mx:request</span></i><span style="color: #000000">&gt; 标签用于定义操作的参数。 此处远程方法 </span><i><span style="color: #000000">getAllMedecins</span></i><span style="color: #000000"> 没有参数，因此我们不填写任何内容。对于接受参数的方法 </span><i><span style="color: #000000">param1 </span></i><span style="color: #000000">和 param2</span><span style="color: #000000">，应写为：</span>
   </li>
 </ul>
 
@@ -1254,20 +1256,20 @@
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    &lt;param1&gt;{param1}&lt;/param1&gt;
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>&lt;/mx:Request&gt;
 </code></pre></div>
-<p><span style="color: #000000">其中 </span><em><span style="color: #000000">param1 </span></em><span style="color: #000000">和 </span><em><span style="color: #000000">param2</span></em><span style="color: #000000"> 是在 &lt;mx:Script&gt; 标签内声明并初始化的变量</span></p>
+<p><span style="color: #000000">其中 </span><em><span style="color: #000000">param1 </span></em><span style="color: #000000">和 </span><em><span style="color: #000000">param2 </span></em><span style="color: #000000">是声明并初始化在 &lt;mx:Script&gt; 标签中的变量</span></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">[</span><span class="nx">Bindable</span><span class="p">]</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kr">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nx">param1</span><span class="o">:</span><span class="nx">Type1</span><span class="p">;</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">[</span><span class="nx">Bindable</span><span class="p">]</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kr">private</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nx">param2</span><span class="o">:</span><span class="nx">Type2</span><span class="p">;</span>
 </code></pre></div>
-<p><span style="color: #000000">在 &lt;</span><em><span style="color: #000000">mx:Script</span></em><span style="color: #000000">&gt; 标签内，有与前一个客户端中学习过的类似的 ActionScript 代码。唯一的区别在于第 13–16 行中的 </span><em><span style="color: #000000">loadMedecins</span></em><span style="color: #000000"> 方法。不同之处在于调用远程方法 [getAllMedecins] 的方式：</span></p>
+<p><span style="color: #000000">在 &lt;</span><em><span style="color: #000000">mx:Script</span></em><span style="color: #000000">&gt; 标签中，我们可以看到与前一个客户端中分析过的代码类似的 ActionScript 代码。 唯一不同的是第13至16行中的方法 </span><em><span style="color: #000000">loadMedecins</span></em><span style="color: #000000">。区别在于调用远程方法 [getAllMedecins] 的方式：</span></p>
 <ul>
-  <li><span style="color: #000000">第 15 行：我们使用了第 35 行定义的 Web 服务 [wsrdvmedecins] 及其第 37 行定义的操作 [getAllMedecins]。为执行此操作，使用了 </span><b><span style="color: #000000">send</span></b><span style="color: #000000"> 方法。它会发起对第 35 行定义的 Web 服务中 </span><i><span style="color: #000000">getAllMedecins</span></i><span style="color: #000000"> 方法的异步调用。 </span><i><span style="color: #000000">send</span></i><span style="color: #000000"> 方法将使用第 39 行 &lt;</span><i><span style="color: #000000">mx:request</span></i><span style="color: #000000">&gt; 标签中定义的参数进行调用。此处没有参数。如果该方法有 </span><i><span style="color: #000000">param1 </span></i><span style="color: #000000">和 </span><i><span style="color: #000000">param2</span></i><span style="color: #000000"> 两个参数，</span><i><span style="color: #000000">loadMedecins</span></i><span style="color: #000000"> 脚本会在调用 </span><i><span style="color: #000000">send</span></i><span style="color: #000000"> 方法之前为这些参数赋值。</span>
+  <li><span style="color: #000000">第15行：使用第35行定义的Web服务[wsrdvmedecins]及其第37行定义的操作[getAllMedecins]。为执行该操作，使用了</span><b><span style="color: #000000">send</span></b><span style="color: #000000">方法。 正是该方法启动了对第 35 行定义的 Web 服务中 </span><i><span style="color: #000000">getAllMedecins</span></i><span style="color: #000000"> 方法的异步调用。 方法 </span><i><span style="color: #000000">send </span></i><span style="color: #000000">将使用第 39 行 &lt;</span><i><span style="color: #000000">mx:request</span></i><span style="color: #000000">&gt; 标签定义的参数进行调用。此处没有参数。 如果该方法包含参数 </span><i><span style="color: #000000">param1 </span></i><span style="color: #000000">和 </span><i><span style="color: #000000">param2</span></i><span style="color: #000000">，则脚本 </span><i><span style="color: #000000">loadMedecins</span></i><span style="color: #000000"> 会在调用方法 </span><i><span style="color: #000000">send</span></i><span style="color: #000000"> 之前为这些参数赋值。</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">接下来只需测试这个新应用程序：</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001090000014E854DFB8E.png" width="186" height="234" style="display:inline-block; margin:4px;width:4.911cm;height:6.189cm;" class="odt-zoomable" data-zoom-src="images/10000000000001090000014E854DFB8E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span style="color: #000000">现在我们只需测试这个新应用程序：</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001090000014E854DFB8E.png" width="186" height="234" style="display:inline-block; margin:4px;width:4.911cm;height:6.189cm;" class="odt-zoomable" data-zoom-src="images/10000000000001090000014E854DFB8E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 
 
